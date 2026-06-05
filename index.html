@@ -87,6 +87,51 @@
 
     .nav-links a:hover { color: var(--gold); }
 
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--blue);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      .hamburger { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(250, 245, 238, 0.98);
+        flex-direction: column;
+        gap: 0;
+        border-bottom: 2px solid rgba(200, 151, 58, 0.3);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li a {
+        display: block;
+        padding: 14px 24px;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.1);
+        font-size: 1rem;
+      }
+    }
+
     /* HERO */
     .hero {
       min-height: 100vh;
@@ -596,13 +641,30 @@
   <!-- NAV -->
   <nav>
     <div class="logo">Shop With <span>Rossy</span></div>
-    <ul class="nav-links">
-      <li><a href="#como-funciona">Cómo funciona</a></li>
-      <li><a href="#tiendas">Tiendas</a></li>
-      <li><a href="#precios">Precios</a></li>
-      <li><a href="#contacto">Contactar</a></li>
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#como-funciona" class="nav-item">Cómo funciona</a></li>
+      <li><a href="#tiendas" class="nav-item">Tiendas</a></li>
+      <li><a href="#precios" class="nav-item">Precios</a></li>
+      <li><a href="#contacto" class="nav-item">Contactar</a></li>
     </ul>
   </nav>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    document.querySelectorAll('.nav-item').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+  </script>
 
   <!-- HERO -->
   <section class="hero">
