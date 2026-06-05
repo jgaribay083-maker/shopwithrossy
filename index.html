@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop With Rossy</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --gold: #c8973a;
+      --gold-light: #e8c070;
+      --blue: #2a5f9e;
+      --blue-light: #4a80c0;
+      --beige: #f5ede0;
+      --beige-dark: #e8d8c0;
+      --dark: #1a1a2e;
+      --text: #2d2d2d;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--beige);
+      color: var(--text);
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(250, 245, 238, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+      padding: 16px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--blue);
+      letter-spacing: 1px;
+    }
+
+    .logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1a3a6e 0%, #2a5f9e 50%, #3a80c0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 20px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('hero.jpg') center center / cover no-repeat;
+      opacity: 0.15;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(200, 151, 58, 0.2);
+      border: 1px solid rgba(200, 151, 58, 0.5);
+      color: var(--gold-light);
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span { color: var(--gold-light); }
+
+    .hero p {
+      color: rgba(255,255,255,0.8);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold), #e8a840);
+      color: #fff;
+      padding: 16px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 30px rgba(200, 151, 58, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 40px rgba(200, 151, 58, 0.4);
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      background: transparent;
+      color: rgba(255,255,255,0.85);
+      padding: 16px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      margin-left: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.6);
+    }
+
+    .hero-stores {
+      margin-top: 50px;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .store-logos {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .store-tag {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    /* SECCIONES */
+    section { padding: 80px 20px; }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #666;
+      font-size: 1rem;
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .gold-line {
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(to right, var(--gold), var(--gold-light));
+      margin: 12px auto 0;
+      border-radius: 2px;
+    }
+
+    /* CÓMO FUNCIONA */
+    .how-it-works { background: #fff; }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .step {
+      text-align: center;
+      padding: 36px 24px;
+      border-radius: 16px;
+      background: var(--beige);
+      border: 1px solid var(--beige-dark);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .step:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(42, 95, 158, 0.1);
+    }
+
+    .step-num {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+    }
+
+    .step h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--blue);
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+    }
+
+    .step p { color: #666; font-size: 0.9rem; line-height: 1.6; }
+
+    /* TIENDAS */
+    .stores-section { background: var(--beige); }
+
+    .stores-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .store-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 30px 20px;
+      text-align: center;
+      border: 1px solid var(--beige-dark);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .store-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .store-icon { font-size: 2.5rem; margin-bottom: 12px; }
+
+    .store-card h3 { font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .store-card p { font-size: 0.8rem; color: #888; }
+
+    /* PRECIOS */
+    .pricing { background: #fff; }
+
+    .price-card {
+      max-width: 420px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
+      border-radius: 24px;
+      padding: 50px 40px;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 20px 60px rgba(42, 95, 158, 0.3);
+    }
+
+    .price-amount {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+
+    .price-amount span { font-size: 1.5rem; vertical-align: top; margin-top: 12px; display: inline-block; }
+
+    .price-label { font-size: 0.85rem; opacity: 0.7; margin-top: 6px; letter-spacing: 1px; }
+
+    .price-features {
+      list-style: none;
+      margin: 30px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .price-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    .price-features li::before {
+      content: '✓';
+      color: var(--gold-light);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* CONTACTO */
+    .contact { background: var(--beige); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .contact-btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 22px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 600;
+      color: #fff;
+      transition: all 0.25s ease;
+    }
+
+    .contact-btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
+
+    .contact-btn.whatsapp { background: linear-gradient(135deg, #25d366, #128c7e); }
+    .contact-btn.instagram { background: linear-gradient(135deg, #833ab4, #fd1d1d, #f77737); }
+    .contact-btn.facebook { background: linear-gradient(135deg, #1877f2, #0d5abf); }
+
+    .contact-btn img { width: 28px; height: 28px; filter: brightness(0) invert(1); }
+    .contact-btn span { font-size: 0.95rem; }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+    }
+
+    footer span { color: var(--gold); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">Shop With <span>Rossy</span></div>
+    <ul class="nav-links">
+      <li><a href="#como-funciona">Cómo funciona</a></li>
+      <li><a href="#tiendas">Tiendas</a></li>
+      <li><a href="#precios">Precios</a></li>
+      <li><a href="#contacto">Contactar</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">✨ Personal Shopper desde USA</div>
+      <h1>Ropa de marca a precios de <span>outlet</span>, sin salir de México</h1>
+      <p>Soy tu compradora personal en Estados Unidos. Agendas una videollamada, me dices qué buscas y yo voy a las tiendas a encontrarlo por ti.</p>
+      <a href="#contacto" class="btn-primary">📅 Agendar cita</a>
+      <a href="#como-funciona" class="btn-secondary">¿Cómo funciona?</a>
+
+      <div class="hero-stores">
+        <p>Compramos en las mejores tiendas outlet</p>
+        <div class="store-logos">
+          <div class="store-tag">ROSS</div>
+          <div class="store-tag">Burlington</div>
+          <div class="store-tag">Marshalls</div>
+          <div class="store-tag">TJ Maxx</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO FUNCIONA -->
+  <section class="how-it-works" id="como-funciona">
+    <div class="section-title">
+      <h2>¿Cómo funciona?</h2>
+      <p>En 3 pasos sencillos tienes tu ropa de marca favorita</p>
+      <div class="gold-line"></div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Agendas tu cita</h3>
+        <p>Escríbeme por WhatsApp y coordinamos una videollamada a tu horario.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Yo voy a las tiendas</h3>
+        <p>Por videollamada te muestro en tiempo real lo que encuentro en Ross, Burlington, Marshalls y más.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Tú decides y yo compro</h3>
+        <p>Eliges lo que quieres, haces el pago y coordinas el envío a México. Así de fácil.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIENDAS -->
+  <section class="stores-section" id="tiendas">
+    <div class="section-title">
+      <h2>Tiendas donde compramos</h2>
+      <p>Las mejores outlets de USA con descuentos de hasta 70% en marcas de lujo</p>
+      <div class="gold-line"></div>
+    </div>
+    <div class="stores-grid">
+      <div class="store-card">
+        <div class="store-icon">🏪</div>
+        <h3>Ross</h3>
+        <p>Dress for Less — ropa de marca con hasta 60% de descuento</p>
+      </div>
+      <div class="store-card">
+        <div class="store-icon">🛍️</div>
+        <h3>Burlington</h3>
+        <p>Ropa, bolsas y accesorios de temporada a precios increíbles</p>
+      </div>
+      <div class="store-card">
+        <div class="store-icon">👜</div>
+        <h3>Marshalls</h3>
+        <p>Marcas premium: Michael Kors, Coach, Calvin Klein y más</p>
+      </div>
+      <div class="store-card">
+        <div class="store-icon">✨</div>
+        <h3>TJ Maxx</h3>
+        <p>Designer brands a precios de outlet — joyas, ropa y hogar</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRECIOS -->
+  <section class="pricing" id="precios">
+    <div class="section-title">
+      <h2>Precio del servicio</h2>
+      <p>Simple, transparente y justo</p>
+      <div class="gold-line"></div>
+    </div>
+    <div class="price-card">
+      <div class="price-amount"><span>+</span>20<span>%</span></div>
+      <div class="price-label">SOBRE EL TOTAL DE TU COMPRA</div>
+      <ul class="price-features">
+        <li>Videollamada en tiempo real desde la tienda</li>
+        <li>Búsqueda personalizada de tu talla y estilo</li>
+        <li>Sin costo si no encuentras lo que buscas</li>
+        <li>Asesoría de moda incluida</li>
+        <li>Fotos y videos de cada prenda</li>
+      </ul>
+      <a href="https://wa.me/16028217262?text=Hola%20Rossy!%20Quiero%20agendar%20una%20cita%20para%20compras%20%F0%9F%9B%8D%EF%B8%8F" class="btn-primary" style="color:#1a3a6e;">📅 Agendar mi cita ahora</a>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contact" id="contacto">
+    <div class="section-title">
+      <h2>¡Hablemos!</h2>
+      <p>Escríbeme y agendamos tu videollamada de compras</p>
+      <div class="gold-line"></div>
+    </div>
+    <div class="contact-grid">
+      <a class="contact-btn whatsapp" href="https://wa.me/16028217262?text=Hola%20Rossy!%20Quiero%20agendar%20una%20cita%20para%20compras%20%F0%9F%9B%8D%EF%B8%8F" target="_blank">
+        <img src="https://cdn.simpleicons.org/whatsapp/white" alt="WhatsApp">
+        <span>WhatsApp</span>
+      </a>
+      <a class="contact-btn instagram" href="https://www.instagram.com/shopwithrossy/" target="_blank">
+        <img src="https://cdn.simpleicons.org/instagram/white" alt="Instagram">
+        <span>Instagram</span>
+      </a>
+      <a class="contact-btn facebook" href="https://www.facebook.com/profile.php?id=61590637858280" target="_blank">
+        <img src="https://cdn.simpleicons.org/facebook/white" alt="Facebook">
+        <span>Facebook</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 <span>Shop With Rossy</span> — Personal Shopper desde USA 🇺🇸</p>
+  </footer>
+
+</body>
+</html>
