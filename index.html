@@ -685,6 +685,121 @@
     </div>
   </section>
 
+  <!-- NO SOY REVENDEDORA -->
+  <section style="background:#fff; padding:80px 20px;">
+    <div class="section-title">
+      <h2>¿Qué es exactamente este servicio?</h2>
+      <p>Quiero ser muy clara contigo antes de que agendemos</p>
+      <div class="gold-line"></div>
+    </div>
+    <div style="max-width:700px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+
+      <div style="background:#fff0f0; border:2px solid #ffcccc; border-radius:16px; padding:28px; reveal-left" class="reveal-left">
+        <div style="font-size:2rem; margin-bottom:12px;">❌</div>
+        <h3 style="color:#c0392b; font-family:'Playfair Display',serif; margin-bottom:10px;">Lo que NO soy</h3>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; color:#555; font-size:0.9rem; line-height:1.6;">
+          <li>✗ No soy revendedora</li>
+          <li>✗ No compro mercancía al por mayor para revender</li>
+          <li>✗ No tengo inventario ni catálogo fijo</li>
+          <li>✗ No te mando lo que yo quiero</li>
+        </ul>
+      </div>
+
+      <div style="background:#f0fff4; border:2px solid #a8e6c0; border-radius:16px; padding:28px;" class="reveal-right">
+        <div style="font-size:2rem; margin-bottom:12px;">✅</div>
+        <h3 style="color:#1a7a40; font-family:'Playfair Display',serif; margin-bottom:10px;">Lo que SÍ soy</h3>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; color:#555; font-size:0.9rem; line-height:1.6;">
+          <li>✓ Soy tu compradora personal por cita</li>
+          <li>✓ Tú decides qué comprar en videollamada</li>
+          <li>✓ Te doy tu tiempo y tu espacio</li>
+          <li>✓ Tú eres quien elige cada prenda</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div style="max-width:700px; margin:30px auto 0; background:linear-gradient(135deg,#eef4ff,#e8f0ff); border:1px solid #c0d4f0; border-radius:16px; padding:28px 32px;" class="reveal">
+      <p style="font-size:1rem; line-height:1.8; color:#2d2d2d; text-align:center;">
+        💡 <strong>Este servicio es ideal si eres revendedora, tienes una boutique o simplemente amas las compras</strong> — porque al enviar varios artículos juntos, el costo de envío se divide y todos ganan. No pagas envío por una sola prenda, sino que se comparte entre todo lo que compramos ese día.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="background:var(--beige); padding:80px 20px;" id="faq">
+    <div class="section-title">
+      <h2>Preguntas frecuentes</h2>
+      <p>Todo lo que necesitas saber antes de agendar</p>
+      <div class="gold-line"></div>
+    </div>
+    <div style="max-width:650px; margin:0 auto; display:flex; flex-direction:column; gap:14px;">
+
+      <div class="faq-item reveal" onclick="toggleFaq(this)">
+        <div class="faq-q">¿Por qué no eres revendedora? <span>+</span></div>
+        <div class="faq-a">Porque yo no compro mercancía para después vendértela. Tú agendas una cita conmigo, vamos juntas a la tienda por videollamada, tú eliges cada pieza y pagas el precio real de la tienda. Yo solo cobro mi comisión del 20% por el servicio.</div>
+      </div>
+
+      <div class="faq-item reveal" onclick="toggleFaq(this)">
+        <div class="faq-q">¿Cómo funciona el envío a México? <span>+</span></div>
+        <div class="faq-a">El envío se coordina una vez que tengamos varias compras del día listas. Al enviar todo junto el costo se divide entre los clientes, lo que hace que salga mucho más económico que si cada quien pagara su propio envío.</div>
+      </div>
+
+      <div class="faq-item reveal" onclick="toggleFaq(this)">
+        <div class="faq-q">¿Cómo hago el pago? <span>+</span></div>
+        <div class="faq-a">Primero haces el pago de tu mercancía y mi comisión del 20%, y después yo voy a comprar. Aceptamos Zelle, PayPal o transferencia. Te mando el recibo de todo lo que compré.</div>
+      </div>
+
+      <div class="faq-item reveal" onclick="toggleFaq(this)">
+        <div class="faq-q">¿Qué pasa si no encuentras lo que busco? <span>+</span></div>
+        <div class="faq-a">Si no encuentro lo que buscas ese día, no te cobro nada. Podemos reagendar para otro día o buscar en otra tienda. Mi objetivo es que quedes satisfecha.</div>
+      </div>
+
+      <div class="faq-item reveal" onclick="toggleFaq(this)">
+        <div class="faq-q">¿Cuánto tiempo tarda en llegar a México? <span>+</span></div>
+        <div class="faq-a">Depende del servicio de paquetería que elijas, pero generalmente entre 7 y 15 días hábiles una vez que se envía el paquete.</div>
+      </div>
+
+      <div class="faq-item reveal" onclick="toggleFaq(this)">
+        <div class="faq-q">¿Funciona para revendedoras o negocios? <span>+</span></div>
+        <div class="faq-a">¡Sí, es perfecto! Muchas de mis clientas son dueñas de boutiques o revendedoras. Al comprar varios artículos juntos el envío sale más económico y consiguen mercancía de marca a precios de outlet.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <style>
+    .faq-item {
+      background: #fff;
+      border: 1px solid var(--beige-dark);
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+    }
+    .faq-item:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+    .faq-q {
+      padding: 18px 22px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--blue);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-q span { font-size: 1.3rem; color: var(--gold); transition: transform 0.3s; }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 22px;
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.7;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+    .faq-item.open .faq-a { max-height: 200px; padding: 0 22px 18px; }
+    .faq-item.open .faq-q span { transform: rotate(45deg); }
+  </style>
+
   <!-- CATÁLOGO DE MARCAS -->
   <section class="brands-section" id="marcas">
     <div class="section-title">
@@ -808,6 +923,10 @@
     document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
       observer.observe(el);
     });
+
+    function toggleFaq(el) {
+      el.classList.toggle('open');
+    }
 
     function enviarCita() {
       const nombre = document.getElementById('nombre').value;
