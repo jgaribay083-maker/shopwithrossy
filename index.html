@@ -537,6 +537,40 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-6px); }
     }
+
+    /* ANIMACIONES SCROLL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
   </style>
 </head>
 <body>
@@ -581,7 +615,7 @@
       <div class="gold-line"></div>
     </div>
     <div class="steps">
-      <div class="step">
+      <div class="step reveal">
         <div class="step-num">1</div>
         <h3>Agendas tu cita</h3>
         <p>Escríbeme por WhatsApp y coordinamos una videollamada a tu horario.</p>
@@ -607,22 +641,22 @@
       <div class="gold-line"></div>
     </div>
     <div class="stores-grid">
-      <div class="store-card">
+      <div class="store-card reveal-left">
         <div class="store-icon">🏪</div>
         <h3>Ross</h3>
         <p>Dress for Less — ropa de marca con hasta 60% de descuento</p>
       </div>
-      <div class="store-card">
+      <div class="store-card reveal">
         <div class="store-icon">🛍️</div>
         <h3>Burlington</h3>
         <p>Ropa, bolsas y accesorios de temporada a precios increíbles</p>
       </div>
-      <div class="store-card">
+      <div class="store-card reveal">
         <div class="store-icon">👜</div>
         <h3>Marshalls</h3>
         <p>Marcas premium: Michael Kors, Coach, Calvin Klein y más</p>
       </div>
-      <div class="store-card">
+      <div class="store-card reveal-right">
         <div class="store-icon">✨</div>
         <h3>TJ Maxx</h3>
         <p>Designer brands a precios de outlet — joyas, ropa y hogar</p>
@@ -637,7 +671,7 @@
       <p>Simple, transparente y justo</p>
       <div class="gold-line"></div>
     </div>
-    <div class="price-card">
+    <div class="price-card reveal">
       <div class="price-amount"><span>+</span>20<span>%</span></div>
       <div class="price-label">SOBRE EL TOTAL DE TU COMPRA</div>
       <ul class="price-features">
@@ -683,7 +717,7 @@
       <p>Llena el formulario y te contactamos en menos de 24 horas</p>
       <div class="gold-line"></div>
     </div>
-    <div class="form-card">
+    <div class="form-card reveal">
       <div class="form-row">
         <div class="form-group">
           <label>Tu nombre</label>
@@ -762,6 +796,19 @@
   </footer>
 
   <script>
+    // Animaciones al hacer scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+      observer.observe(el);
+    });
+
     function enviarCita() {
       const nombre = document.getElementById('nombre').value;
       const telefono = document.getElementById('telefono').value;
