@@ -395,6 +395,148 @@
     }
 
     footer span { color: var(--gold); }
+
+    /* FORMULARIO */
+    .form-section { background: #fff; }
+
+    .form-card {
+      max-width: 580px;
+      margin: 0 auto;
+      background: var(--beige);
+      border-radius: 20px;
+      padding: 40px;
+      border: 1px solid var(--beige-dark);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--blue);
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--beige-dark);
+      background: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--blue);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 100px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .btn-form {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn-form:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(42, 95, 158, 0.3);
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      background: rgba(37, 211, 102, 0.1);
+      border: 1px solid rgba(37, 211, 102, 0.3);
+      border-radius: 10px;
+      color: #128c7e;
+      font-weight: 600;
+      margin-top: 16px;
+    }
+
+    /* CATÁLOGO DE MARCAS */
+    .brands-section { background: var(--beige); }
+
+    .brands-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .brand-tag {
+      background: #fff;
+      border: 1px solid var(--beige-dark);
+      border-radius: 50px;
+      padding: 10px 22px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      transition: all 0.2s ease;
+    }
+
+    .brand-tag:hover {
+      background: var(--blue);
+      color: #fff;
+      border-color: var(--blue);
+      transform: translateY(-2px);
+    }
+
+    /* BOTÓN WHATSAPP FLOTANTE */
+    .wa-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 999;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      animation: bounce 2s infinite;
+    }
+
+    .wa-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 35px rgba(37, 211, 102, 0.5);
+    }
+
+    .wa-float img { width: 30px; height: 30px; filter: brightness(0) invert(1); }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
   </style>
 </head>
 <body>
@@ -509,6 +651,83 @@
     </div>
   </section>
 
+  <!-- CATÁLOGO DE MARCAS -->
+  <section class="brands-section" id="marcas">
+    <div class="section-title">
+      <h2>Marcas que encuentro</h2>
+      <p>Desde marcas deportivas hasta diseñadores premium</p>
+      <div class="gold-line"></div>
+    </div>
+    <div class="brands-grid">
+      <div class="brand-tag">👜 Michael Kors</div>
+      <div class="brand-tag">👜 Coach</div>
+      <div class="brand-tag">👟 Nike</div>
+      <div class="brand-tag">👟 Adidas</div>
+      <div class="brand-tag">👗 Calvin Klein</div>
+      <div class="brand-tag">👗 Tommy Hilfiger</div>
+      <div class="brand-tag">✨ Ralph Lauren</div>
+      <div class="brand-tag">💎 Kate Spade</div>
+      <div class="brand-tag">👗 Guess</div>
+      <div class="brand-tag">🧥 Levi's</div>
+      <div class="brand-tag">👟 Skechers</div>
+      <div class="brand-tag">💄 Clinique</div>
+      <div class="brand-tag">🏠 KitchenAid</div>
+      <div class="brand-tag">✨ y muchas más...</div>
+    </div>
+  </section>
+
+  <!-- FORMULARIO -->
+  <section class="form-section" id="agendar">
+    <div class="section-title">
+      <h2>Agenda tu cita</h2>
+      <p>Llena el formulario y te contactamos en menos de 24 horas</p>
+      <div class="gold-line"></div>
+    </div>
+    <div class="form-card">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Tu nombre</label>
+          <input type="text" placeholder="Ej. María García" id="nombre">
+        </div>
+        <div class="form-group">
+          <label>WhatsApp / Teléfono</label>
+          <input type="tel" placeholder="+52 55 1234 5678" id="telefono">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>¿Qué estás buscando?</label>
+        <select id="categoria">
+          <option value="">Selecciona una categoría</option>
+          <option>👗 Ropa de mujer</option>
+          <option>👔 Ropa de hombre</option>
+          <option>👶 Ropa de niños</option>
+          <option>👜 Bolsas y accesorios</option>
+          <option>👟 Zapatos y tenis</option>
+          <option>🏠 Artículos del hogar</option>
+          <option>💄 Cosméticos y perfumes</option>
+          <option>🛍️ Variado / Revendedor</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Presupuesto aproximado (USD)</label>
+        <select id="presupuesto">
+          <option value="">Selecciona tu presupuesto</option>
+          <option>$50 - $100 USD</option>
+          <option>$100 - $300 USD</option>
+          <option>$300 - $500 USD</option>
+          <option>$500 - $1,000 USD</option>
+          <option>Más de $1,000 USD</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Cuéntame más (marcas, tallas, colores)</label>
+        <textarea placeholder="Ej. Busco bolsa Michael Kors color café talla mediana, tenis Nike mujer talla 7..." id="detalle"></textarea>
+      </div>
+      <button class="btn-form" onclick="enviarCita()">📅 Enviar solicitud por WhatsApp</button>
+      <div class="form-success" id="successMsg">✅ ¡Listo! Te redirigimos a WhatsApp para confirmar tu cita.</div>
+    </div>
+  </section>
+
   <!-- CONTACTO -->
   <section class="contact" id="contacto">
     <div class="section-title">
@@ -532,10 +751,42 @@
     </div>
   </section>
 
+  <!-- WHATSAPP FLOTANTE -->
+  <a class="wa-float" href="https://wa.me/16028217262?text=Hola%20Rossy!%20Quiero%20agendar%20una%20cita%20%F0%9F%9B%8D%EF%B8%8F" target="_blank">
+    <img src="https://cdn.simpleicons.org/whatsapp/white" alt="WhatsApp">
+  </a>
+
   <!-- FOOTER -->
   <footer>
     <p>© 2026 <span>Shop With Rossy</span> — Personal Shopper desde USA 🇺🇸</p>
   </footer>
 
+  <script>
+    function enviarCita() {
+      const nombre = document.getElementById('nombre').value;
+      const telefono = document.getElementById('telefono').value;
+      const categoria = document.getElementById('categoria').value;
+      const presupuesto = document.getElementById('presupuesto').value;
+      const detalle = document.getElementById('detalle').value;
+
+      if (!nombre || !telefono || !categoria) {
+        alert('Por favor llena tu nombre, teléfono y categoría.');
+        return;
+      }
+
+      const msg = `Hola Rossy! 👋 Quiero agendar una cita.
+
+*Nombre:* ${nombre}
+*Teléfono:* ${telefono}
+*Busco:* ${categoria}
+*Presupuesto:* ${presupuesto}
+*Detalles:* ${detalle || 'Sin detalles adicionales'}`;
+
+      document.getElementById('successMsg').style.display = 'block';
+      setTimeout(() => {
+        window.open(`https://wa.me/16028217262?text=${encodeURIComponent(msg)}`, '_blank');
+      }, 800);
+    }
+  </script>
 </body>
 </html>
