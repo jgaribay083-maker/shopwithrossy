@@ -912,47 +912,53 @@
       <div class="gold-line"></div>
     </div>
     <div class="form-card reveal">
-      <div class="form-row">
-        <div class="form-group">
-          <label>Tu nombre</label>
-          <input type="text" placeholder="Ej. María García" id="nombre">
+      <form id="formCita">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Tu nombre</label>
+            <input type="text" placeholder="Ej. María García" id="nombre" required>
+          </div>
+          <div class="form-group">
+            <label>WhatsApp / Teléfono</label>
+            <input type="tel" placeholder="+52 55 1234 5678" id="telefono" required>
+          </div>
         </div>
         <div class="form-group">
-          <label>WhatsApp / Teléfono</label>
-          <input type="tel" placeholder="+52 55 1234 5678" id="telefono">
+          <label>Tu correo electrónico</label>
+          <input type="email" placeholder="Ej. maria@gmail.com" id="email" name="email" required>
         </div>
-      </div>
-      <div class="form-group">
-        <label>¿Qué estás buscando?</label>
-        <select id="categoria">
-          <option value="">Selecciona una categoría</option>
-          <option>👗 Ropa de mujer</option>
-          <option>👔 Ropa de hombre</option>
-          <option>👶 Ropa de niños</option>
-          <option>👜 Bolsas y accesorios</option>
-          <option>👟 Zapatos y tenis</option>
-          <option>🏠 Artículos del hogar</option>
-          <option>💄 Cosméticos y perfumes</option>
-          <option>🛍️ Variado / Revendedor</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Presupuesto aproximado (USD)</label>
-        <select id="presupuesto">
-          <option value="">Selecciona tu presupuesto</option>
-          <option>$50 - $100 USD</option>
-          <option>$100 - $300 USD</option>
-          <option>$300 - $500 USD</option>
-          <option>$500 - $1,000 USD</option>
-          <option>Más de $1,000 USD</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Cuéntame más (marcas, tallas, colores)</label>
-        <textarea placeholder="Ej. Busco bolsa Michael Kors color café talla mediana, tenis Nike mujer talla 7..." id="detalle"></textarea>
-      </div>
-      <button class="btn-form" onclick="enviarCita()">📅 Enviar solicitud por WhatsApp</button>
-      <div class="form-success" id="successMsg">✅ ¡Listo! Te redirigimos a WhatsApp para confirmar tu cita.</div>
+        <div class="form-group">
+          <label>¿Qué estás buscando?</label>
+          <select id="categoria" required>
+            <option value="">Selecciona una categoría</option>
+            <option>👗 Ropa de mujer</option>
+            <option>👔 Ropa de hombre</option>
+            <option>👶 Ropa de niños</option>
+            <option>👜 Bolsas y accesorios</option>
+            <option>👟 Zapatos y tenis</option>
+            <option>🏠 Artículos del hogar</option>
+            <option>💄 Cosméticos y perfumes</option>
+            <option>🛍️ Variado / Revendedor</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Presupuesto aproximado (USD)</label>
+          <select id="presupuesto">
+            <option value="">Selecciona tu presupuesto</option>
+            <option>$50 - $100 USD</option>
+            <option>$100 - $300 USD</option>
+            <option>$300 - $500 USD</option>
+            <option>$500 - $1,000 USD</option>
+            <option>Más de $1,000 USD</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Cuéntame más (marcas, tallas, colores)</label>
+          <textarea placeholder="Ej. Busco bolsa Michael Kors color café talla mediana, tenis Nike mujer talla 7..." id="detalle"></textarea>
+        </div>
+        <button type="submit" class="btn-form">📅 Enviar solicitud por WhatsApp</button>
+        <div class="form-success" id="successMsg">✅ ¡Listo! Te redirigimos a WhatsApp para confirmar tu cita.</div>
+      </form>
     </div>
   </section>
 
@@ -989,6 +995,9 @@
     <p>© 2026 <span>Shop With Rossy</span> — Personal Shopper desde USA 🇺🇸</p>
   </footer>
 
+  <!-- Pixel Guard — Lead Firewall by Vista Growth Agency -->
+  <script src="pixel-guard.js"></script>
+
   <script>
     // Animaciones al hacer scroll
     const observer = new IntersectionObserver((entries) => {
@@ -1007,15 +1016,18 @@
       el.classList.toggle('open');
     }
 
-    function enviarCita() {
+    document.getElementById('formCita').addEventListener('submit', function(e) {
+      e.preventDefault();
+
       const nombre = document.getElementById('nombre').value;
       const telefono = document.getElementById('telefono').value;
+      const email = document.getElementById('email').value;
       const categoria = document.getElementById('categoria').value;
       const presupuesto = document.getElementById('presupuesto').value;
       const detalle = document.getElementById('detalle').value;
 
-      if (!nombre || !telefono || !categoria) {
-        alert('Por favor llena tu nombre, teléfono y categoría.');
+      if (!nombre || !telefono || !email || !categoria) {
+        alert('Por favor llena todos los campos obligatorios.');
         return;
       }
 
@@ -1023,15 +1035,17 @@
 
 *Nombre:* ${nombre}
 *Teléfono:* ${telefono}
+*Email:* ${email}
 *Busco:* ${categoria}
 *Presupuesto:* ${presupuesto}
 *Detalles:* ${detalle || 'Sin detalles adicionales'}`;
 
+      fbq('track', 'Lead');
       document.getElementById('successMsg').style.display = 'block';
       setTimeout(() => {
         window.open(`https://wa.me/16028217262?text=${encodeURIComponent(msg)}`, '_blank');
       }, 800);
-    }
+    });
   </script>
 </body>
 </html>
