@@ -641,6 +641,41 @@
       opacity: 1;
       transform: translateX(0);
     }
+
+    /* REELS GRID */
+    .reels-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      justify-items: center;
+    }
+
+    .reel-item {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      background: #fafafa;
+    }
+
+    .reel-item iframe {
+      width: 100%;
+      min-height: 520px;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .reels-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 0 10px;
+      }
+      .reel-item { max-width: 100%; }
+      .reel-item iframe { min-height: 480px; }
+    }
   </style>
 </head>
 <body>
@@ -655,6 +690,7 @@
       <li><a href="#como-funciona" class="nav-item">Cómo funciona</a></li>
       <li><a href="#tiendas" class="nav-item">Tiendas</a></li>
       <li><a href="#precios" class="nav-item">Precios</a></li>
+      <li><a href="#reels" class="nav-item">Reels</a></li>
       <li><a href="#contacto" class="nav-item">Contactar</a></li>
     </ul>
   </nav>
@@ -901,6 +937,29 @@
       <div class="brand-tag">💄 Clinique</div>
       <div class="brand-tag">🏠 KitchenAid</div>
       <div class="brand-tag">✨ y muchas más...</div>
+    </div>
+  </section>
+
+  <!-- REELS DE INSTAGRAM -->
+  <section style="background:#fff; padding:80px 20px;" id="reels">
+    <div class="section-title">
+      <h2>Mira cómo compro para ti</h2>
+      <p>Sígueme en Instagram para ver las compras en tiempo real</p>
+      <div class="gold-line"></div>
+    </div>
+    <div class="reels-grid">
+      <div class="reel-item reveal-left">
+        <iframe src="https://www.instagram.com/p/DZNd6oKqVUl/embed" allowtransparency="true" allowfullscreen="true" frameborder="0" scrolling="no"></iframe>
+      </div>
+      <div class="reel-item reveal">
+        <iframe src="https://www.instagram.com/p/DZMZPa-qHEh/embed" allowtransparency="true" allowfullscreen="true" frameborder="0" scrolling="no"></iframe>
+      </div>
+      <div class="reel-item reveal-right">
+        <iframe src="https://www.instagram.com/p/DZMYRWgKqua/embed" allowtransparency="true" allowfullscreen="true" frameborder="0" scrolling="no"></iframe>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:30px;">
+      <a href="https://www.instagram.com/shopwithrossy/" target="_blank" class="btn-primary" style="background:linear-gradient(135deg, #833ab4, #fd1d1d, #f77737);">Sígueme en Instagram</a>
     </div>
   </section>
 
