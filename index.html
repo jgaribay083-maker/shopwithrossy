@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shop With Rossy</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop With Rossy | Tu Personal Shopper desde USA</title>
+  <meta name="description" content="Ropa de marca desde USA a precios de outlet. Personal shopper por videollamada — tú eliges, yo compro. Ross, Burlington, Marshalls, TJ Maxx.">
+  <meta property="og:title" content="Shop With Rossy | Ropa de Marca desde USA">
+  <meta property="og:description" content="Tu compradora personal en Estados Unidos. Agendas videollamada, eliges lo que quieres y yo compro por ti.">
+  <meta property="og:type" content="website">
   <!-- Meta Pixel Code -->
   <script>
   !function(f,b,e,v,n,t,s)
@@ -22,704 +26,56 @@
     src="https://www.facebook.com/tr?id=27521705127427333&ev=PageView&noscript=1"/>
   </noscript>
   <!-- End Meta Pixel Code -->
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --gold: #c8973a;
-      --gold-light: #e8c070;
-      --blue: #2a5f9e;
-      --blue-light: #4a80c0;
-      --beige: #f5ede0;
-      --beige-dark: #e8d8c0;
-      --dark: #1a1a2e;
-      --text: #2d2d2d;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--beige);
-      color: var(--text);
-    }
-
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 100;
-      background: rgba(250, 245, 238, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(200, 151, 58, 0.2);
-      padding: 16px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      color: var(--blue);
-      letter-spacing: 1px;
-    }
-
-    .logo span { color: var(--gold); }
-
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text);
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover { color: var(--gold); }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 4px;
-    }
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--blue);
-      border-radius: 2px;
-      transition: all 0.3s;
-    }
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    @media (max-width: 768px) {
-      nav { padding: 14px 20px; }
-      .hamburger { display: flex; }
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: rgba(250, 245, 238, 0.98);
-        flex-direction: column;
-        gap: 0;
-        border-bottom: 2px solid rgba(200, 151, 58, 0.3);
-        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      }
-      .nav-links.open { display: flex; }
-      .nav-links li a {
-        display: block;
-        padding: 14px 24px;
-        border-bottom: 1px solid rgba(200, 151, 58, 0.1);
-        font-size: 1rem;
-      }
-    }
-
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #1a3a6e 0%, #2a5f9e 50%, #3a80c0 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 100px 20px 60px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url('hero.jpg') center center / cover no-repeat;
-      opacity: 0.15;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 700px;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: rgba(200, 151, 58, 0.2);
-      border: 1px solid rgba(200, 151, 58, 0.5);
-      color: var(--gold-light);
-      font-size: 0.75rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      padding: 6px 18px;
-      border-radius: 20px;
-      margin-bottom: 24px;
-    }
-
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      color: #fff;
-      line-height: 1.15;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 span { color: var(--gold-light); }
-
-    .hero p {
-      color: rgba(255,255,255,0.8);
-      font-size: 1.1rem;
-      line-height: 1.7;
-      margin-bottom: 36px;
-      max-width: 540px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .btn-primary {
-      display: inline-block;
-      background: linear-gradient(135deg, var(--gold), #e8a840);
-      color: #fff;
-      padding: 16px 36px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      letter-spacing: 0.5px;
-      transition: all 0.3s ease;
-      box-shadow: 0 8px 30px rgba(200, 151, 58, 0.3);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 14px 40px rgba(200, 151, 58, 0.4);
-    }
-
-    .btn-secondary {
-      display: inline-block;
-      background: transparent;
-      color: rgba(255,255,255,0.85);
-      padding: 16px 36px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1rem;
-      border: 1px solid rgba(255,255,255,0.3);
-      margin-left: 12px;
-      transition: all 0.3s ease;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: rgba(255,255,255,0.6);
-    }
-
-    .hero-stores {
-      margin-top: 50px;
-      color: rgba(255,255,255,0.5);
-      font-size: 0.75rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .store-logos {
-      display: flex;
-      gap: 30px;
-      justify-content: center;
-      margin-top: 16px;
-      flex-wrap: wrap;
-    }
-
-    .store-tag {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-      color: #fff;
-      padding: 8px 20px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      letter-spacing: 1px;
-    }
-
-    /* SECCIONES */
-    section { padding: 80px 20px; }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    .section-title h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      color: var(--blue);
-      margin-bottom: 12px;
-    }
-
-    .section-title p {
-      color: #666;
-      font-size: 1rem;
-      max-width: 500px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-
-    .gold-line {
-      width: 50px;
-      height: 3px;
-      background: linear-gradient(to right, var(--gold), var(--gold-light));
-      margin: 12px auto 0;
-      border-radius: 2px;
-    }
-
-    /* CÓMO FUNCIONA */
-    .how-it-works { background: #fff; }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 30px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .step {
-      text-align: center;
-      padding: 36px 24px;
-      border-radius: 16px;
-      background: var(--beige);
-      border: 1px solid var(--beige-dark);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .step:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(42, 95, 158, 0.1);
-    }
-
-    .step-num {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--blue), var(--blue-light));
-      color: #fff;
-      font-size: 1.4rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 18px;
-    }
-
-    .step h3 {
-      font-family: 'Playfair Display', serif;
-      color: var(--blue);
-      font-size: 1.15rem;
-      margin-bottom: 10px;
-    }
-
-    .step p { color: #666; font-size: 0.9rem; line-height: 1.6; }
-
-    /* TIENDAS */
-    .stores-section { background: var(--beige); }
-
-    .stores-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .store-card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 30px 20px;
-      text-align: center;
-      border: 1px solid var(--beige-dark);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .store-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
-
-    .store-icon { font-size: 2.5rem; margin-bottom: 12px; }
-    .store-logo-img { height: 50px; object-fit: contain; margin-bottom: 12px; }
-    .store-logo-text {
-      font-size: 1.3rem;
-      font-weight: 900;
-      margin-bottom: 12px;
-      letter-spacing: -0.5px;
-    }
-
-    .store-card h3 { font-weight: 700; color: var(--text); margin-bottom: 6px; }
-    .store-card p { font-size: 0.8rem; color: #888; }
-
-    /* PRECIOS */
-    .pricing { background: #fff; }
-
-    .price-card {
-      max-width: 420px;
-      margin: 0 auto;
-      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
-      border-radius: 24px;
-      padding: 50px 40px;
-      text-align: center;
-      color: #fff;
-      box-shadow: 0 20px 60px rgba(42, 95, 158, 0.3);
-    }
-
-    .price-amount {
-      font-family: 'Playfair Display', serif;
-      font-size: 4rem;
-      font-weight: 700;
-      color: var(--gold-light);
-      line-height: 1;
-    }
-
-    .price-amount span { font-size: 1.5rem; vertical-align: top; margin-top: 12px; display: inline-block; }
-
-    .price-label { font-size: 0.85rem; opacity: 0.7; margin-top: 6px; letter-spacing: 1px; }
-
-    .price-features {
-      list-style: none;
-      margin: 30px 0;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .price-features li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.95rem;
-      opacity: 0.9;
-    }
-
-    .price-features li::before {
-      content: '✓';
-      color: var(--gold-light);
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-
-    /* CONTACTO */
-    .contact { background: var(--beige); }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .contact-btn {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 18px 22px;
-      border-radius: 14px;
-      text-decoration: none;
-      font-weight: 600;
-      color: #fff;
-      transition: all 0.25s ease;
-    }
-
-    .contact-btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
-
-    .contact-btn.whatsapp { background: linear-gradient(135deg, #25d366, #128c7e); }
-    .contact-btn.instagram { background: linear-gradient(135deg, #833ab4, #fd1d1d, #f77737); }
-    .contact-btn.facebook { background: linear-gradient(135deg, #1877f2, #0d5abf); }
-
-    .contact-btn img { width: 28px; height: 28px; filter: brightness(0) invert(1); }
-    .contact-btn span { font-size: 0.95rem; }
-
-    /* FOOTER */
-    footer {
-      background: var(--dark);
-      color: rgba(255,255,255,0.4);
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 0.8rem;
-      letter-spacing: 1px;
-    }
-
-    footer span { color: var(--gold); }
-
-    /* FORMULARIO */
-    .form-section { background: #fff; }
-
-    .form-card {
-      max-width: 580px;
-      margin: 0 auto;
-      background: var(--beige);
-      border-radius: 20px;
-      padding: 40px;
-      border: 1px solid var(--beige-dark);
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--blue);
-      margin-bottom: 8px;
-      letter-spacing: 0.5px;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 14px 16px;
-      border-radius: 10px;
-      border: 1px solid var(--beige-dark);
-      background: #fff;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
-      color: var(--text);
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--blue);
-    }
-
-    .form-group textarea { resize: vertical; min-height: 100px; }
-
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-
-    .btn-form {
-      width: 100%;
-      padding: 16px;
-      background: linear-gradient(135deg, var(--blue), var(--blue-light));
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-family: 'Inter', sans-serif;
-    }
-
-    .btn-form:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(42, 95, 158, 0.3);
-    }
-
-    .form-success {
-      display: none;
-      text-align: center;
-      padding: 20px;
-      background: rgba(37, 211, 102, 0.1);
-      border: 1px solid rgba(37, 211, 102, 0.3);
-      border-radius: 10px;
-      color: #128c7e;
-      font-weight: 600;
-      margin-top: 16px;
-    }
-
-    /* CATÁLOGO DE MARCAS */
-    .brands-section { background: var(--beige); }
-
-    .brands-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .brand-tag {
-      background: #fff;
-      border: 1px solid var(--beige-dark);
-      border-radius: 50px;
-      padding: 10px 22px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text);
-      transition: all 0.2s ease;
-    }
-
-    .brand-tag:hover {
-      background: var(--blue);
-      color: #fff;
-      border-color: var(--blue);
-      transform: translateY(-2px);
-    }
-
-    /* BOTÓN WHATSAPP FLOTANTE */
-    .wa-float {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      z-index: 999;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #25d366, #128c7e);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
-      transition: all 0.3s ease;
-      text-decoration: none;
-      animation: bounce 2s infinite;
-    }
-
-    .wa-float:hover {
-      transform: scale(1.1);
-      box-shadow: 0 10px 35px rgba(37, 211, 102, 0.5);
-    }
-
-    .wa-float img { width: 30px; height: 30px; filter: brightness(0) invert(1); }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
-
-    /* ANIMACIONES SCROLL */
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .reveal-left {
-      opacity: 0;
-      transform: translateX(-40px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal-left.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .reveal-right {
-      opacity: 0;
-      transform: translateX(40px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal-right.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    /* REELS GRID */
-    .reels-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-      justify-items: center;
-    }
-
-    .reel-item {
-      width: 100%;
-      max-width: 320px;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-      background: #fafafa;
-    }
-
-    .reel-item iframe {
-      width: 100%;
-      min-height: 520px;
-      border: none;
-    }
-
-    @media (max-width: 768px) {
-      .reels-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-        padding: 0 10px;
-      }
-      .reel-item { max-width: 100%; }
-      .reel-item iframe { min-height: 480px; }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <div class="logo">Shop With <span>Rossy</span></div>
-    <button class="hamburger" id="hamburger" aria-label="Menú">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#como-funciona" class="nav-item">Cómo funciona</a></li>
-      <li><a href="#tiendas" class="nav-item">Tiendas</a></li>
-      <li><a href="#precios" class="nav-item">Precios</a></li>
-      <li><a href="#reels" class="nav-item">Reels</a></li>
-      <li><a href="#contacto" class="nav-item">Contactar</a></li>
-    </ul>
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        Shop With <span class="gold">Rossy</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#tiendas">Tiendas</a>
+        <a href="#precios">Precios</a>
+        <a href="#reels">Reels</a>
+        <a href="#agendar">Agendar</a>
+      </div>
+      <div class="nav-cta">
+        <a href="https://wa.me/16028217262?text=Hola%20Rossy!%20Quiero%20agendar%20una%20cita%20%F0%9F%9B%8D%EF%B8%8F" target="_blank" class="btn btn-gold btn-sm" onclick="typeof fbq!=='undefined'&&fbq('track','Contact');">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.612.638l4.67-1.386A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.319 0-4.476-.66-6.317-1.797l-.442-.269-3.222.957.88-3.108-.296-.47A9.936 9.936 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('open');
-      navLinks.classList.toggle('open');
-    });
-    document.querySelectorAll('.nav-item').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        navLinks.classList.remove('open');
-      });
-    });
-  </script>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="hero">
+    <div class="hero-bg-img" style="background-image: url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1600&h=900&fit=crop&auto=format&q=80');"></div>
     <div class="hero-content">
-      <div class="hero-badge">✨ Personal Shopper desde USA</div>
-      <h1>Ropa de marca a precios de <span>outlet</span>, sin salir de México</h1>
-      <p>Soy tu compradora personal en Estados Unidos. Agendas una videollamada, me dices qué buscas y yo voy a las tiendas a encontrarlo por ti.</p>
-      <a href="#contacto" class="btn-primary">📅 Agendar cita</a>
-      <a href="#como-funciona" class="btn-secondary">¿Cómo funciona?</a>
-
+      <span class="hero-badge"><span class="badge-dot"></span> Personal Shopper desde Phoenix, AZ</span>
+      <h1 class="hero-title">Ropa de marca a precios de <span class="gold">outlet</span>.</h1>
+      <p class="hero-tagline">Sin salir de México</p>
+      <p class="hero-subtitle">Agendas una videollamada, te muestro lo que hay en tienda y tú decides qué comprar. Así de simple — sin catálogo, sin inventario, sin sorpresas.</p>
+      <div class="hero-btns">
+        <a href="#agendar" class="btn btn-gold">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Agendar cita
+        </a>
+        <a href="#como-funciona" class="btn btn-outline">¿Cómo funciona?</a>
+      </div>
       <div class="hero-stores">
-        <p>Compramos en las mejores tiendas outlet</p>
+        <p>Compramos en las mejores outlets de USA</p>
         <div class="store-logos">
           <div class="store-tag">ROSS</div>
           <div class="store-tag">Burlington</div>
@@ -730,381 +86,535 @@
     </div>
   </section>
 
-  <!-- CÓMO FUNCIONA -->
+  <!-- WAVE: hero → how-it-works -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,0 C300,55 600,5 900,35 C1050,50 1150,15 1200,0 L1200,60 L0,60Z" fill="#FFFFFF"/>
+    </svg>
+  </div>
+
+  <!-- HOW IT WORKS -->
   <section class="how-it-works" id="como-funciona">
-    <div class="section-title">
-      <h2>¿Cómo funciona?</h2>
-      <p>En 3 pasos sencillos tienes tu ropa de marca favorita</p>
-      <div class="gold-line"></div>
-    </div>
-    <div class="steps">
-      <div class="step reveal">
-        <div class="step-num">1</div>
-        <h3>Agendas tu cita</h3>
-        <p>Escríbeme por WhatsApp y coordinamos una videollamada a tu horario.</p>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+          El Proceso
+        </span>
+        <h2 class="section-title">Tres Pasos y <em>Listo</em></h2>
+        <p>No hay letras chiquitas. No hay complicaciones.</p>
       </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <h3>Yo voy a las tiendas</h3>
-        <p>Por videollamada te muestro en tiempo real lo que encuentro en Ross, Burlington, Marshalls y más.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <h3>Tú decides y yo compro</h3>
-        <p>Eliges lo que quieres, haces el pago y coordinas el envío a México. Así de fácil.</p>
+      <div class="steps-grid">
+        <div class="step-card fade-in">
+          <div class="step-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <h3>Escríbeme por WhatsApp</h3>
+          <p>Me dices qué buscas y coordinamos una videollamada al horario que te funcione.</p>
+        </div>
+        <div class="step-card fade-in">
+          <div class="step-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          </div>
+          <h3>Te muestro en vivo</h3>
+          <p>Vamos juntas por videollamada. Te enseño cada prenda, cada marca, cada precio — en tiempo real.</p>
+        </div>
+        <div class="step-card fade-in">
+          <div class="step-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          </div>
+          <h3>Tú decides, yo compro</h3>
+          <p>Eliges lo que te gusta, haces el pago y coordinas el envío a donde quieras en México.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- TIENDAS -->
+  <!-- WAVE: how-it-works → about -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,30 C200,60 400,0 600,30 C800,60 1000,0 1200,30 L1200,60 L0,60Z" fill="#FAF5EE"/>
+    </svg>
+  </div>
+
+  <!-- ABOUT ROSSY -->
+  <section class="about" id="sobre-rossy">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text fade-in-left">
+          <span class="section-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Quién Soy
+          </span>
+          <h2 class="section-title">Soy Rossy, no una <em>Tienda</em></h2>
+          <p>Vivo en Phoenix, Arizona. Cada semana recorro Ross, Burlington, Marshalls y TJ Maxx buscando lo mejor para mis clientas.</p>
+          <blockquote class="about-quote">"No te mando lo que yo quiero — tú eliges cada pieza en videollamada conmigo."</blockquote>
+          <p>No soy revendedora. No tengo catálogo ni inventario. Soy tu compradora personal — y mi trabajo es que encuentres exactamente lo que buscas al mejor precio posible.</p>
+          <div style="margin-top: 24px;">
+            <a href="https://wa.me/16028217262?text=Hola%20Rossy!%20Quiero%20agendar%20una%20cita%20%F0%9F%9B%8D%EF%B8%8F" target="_blank" class="btn btn-gold btn-sm" onclick="typeof fbq!=='undefined'&&fbq('track','Contact');">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              Escríbeme
+            </a>
+          </div>
+        </div>
+        <div class="about-image fade-in-right">
+          <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=500&fit=crop&auto=format&q=80" alt="Interior de tienda outlet" class="about-img" loading="lazy">
+          <div class="about-stat-strip">
+            <div class="about-stat">
+              <strong>Phoenix, AZ</strong>
+              <span>Ubicación</span>
+            </div>
+            <div class="about-stat">
+              <strong>4 Tiendas</strong>
+              <span>Outlets</span>
+            </div>
+            <div class="about-stat">
+              <strong>+20%</strong>
+              <span>Comisión</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAVE: about → stores -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,20 C150,55 350,5 500,30 C650,55 850,10 1200,35 L1200,60 L0,60Z" fill="#FFFFFF"/>
+    </svg>
+  </div>
+
+  <!-- STORES -->
   <section class="stores-section" id="tiendas">
-    <div class="section-title">
-      <h2>Tiendas donde compramos</h2>
-      <p>Las mejores outlets de USA con descuentos de hasta 70% en marcas de lujo</p>
-      <div class="gold-line"></div>
-    </div>
-    <div class="stores-grid">
-      <div class="store-card reveal-left">
-        <div class="store-logo-text" style="color:#003087;">ROSS<br><span style="font-size:0.6rem;letter-spacing:2px;font-weight:600;">DRESS FOR LESS</span></div>
-        <p>Dress for Less — ropa de marca con hasta 60% de descuento</p>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Dónde Compramos
+        </span>
+        <h2 class="section-title">Las Mejores <em>Outlets</em> de USA</h2>
+        <p>Descuentos de hasta 70% en marcas que amas.</p>
       </div>
-      <div class="store-card reveal">
-        <div class="store-logo-text" style="color:#c8222a;">Burlington</div>
-        <p>Ropa, bolsas y accesorios de temporada a precios increíbles</p>
-      </div>
-      <div class="store-card reveal">
-        <div class="store-logo-text" style="color:#003087;">marshalls</div>
-        <p>Marcas premium: Michael Kors, Coach, Calvin Klein y más</p>
-      </div>
-      <div class="store-card reveal-right">
-        <div class="store-logo-text" style="color:#c8222a;">T·J·Maxx</div>
-        <p>Designer brands a precios de outlet — joyas, ropa y hogar</p>
+      <div class="stores-grid">
+        <div class="store-card fade-in-left">
+          <h3 style="color:#003087;">ROSS</h3>
+          <p>Dress for Less — ropa de marca con hasta 60% off</p>
+        </div>
+        <div class="store-card fade-in">
+          <h3 style="color:#c8222a;">Burlington</h3>
+          <p>Ropa, bolsas y accesorios de temporada a precios increíbles</p>
+        </div>
+        <div class="store-card fade-in">
+          <h3 style="color:#003087;">Marshalls</h3>
+          <p>Marcas premium: Michael Kors, Coach, Calvin Klein y más</p>
+        </div>
+        <div class="store-card fade-in-right">
+          <h3 style="color:#c8222a;">TJ Maxx</h3>
+          <p>Designer brands a precios de outlet — joyería, ropa y hogar</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- PRECIOS -->
+  <!-- WAVE: stores → gallery -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C300,5 500,55 700,20 C900,0 1100,50 1200,25 L1200,60 L0,60Z" fill="#FAF5EE"/>
+    </svg>
+  </div>
+
+  <!-- GALLERY -->
+  <section class="gallery-section" id="galeria">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          Galería
+        </span>
+        <h2 class="section-title">Lo que <em>Encuentro</em> para Ti</h2>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item large fade-in">
+          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=400&fit=crop&auto=format&q=75" alt="Bolsas de compras de marca" loading="lazy">
+        </div>
+        <div class="gallery-item fade-in">
+          <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&h=300&fit=crop&auto=format&q=75" alt="Bolsa de diseñador" loading="lazy">
+        </div>
+        <div class="gallery-item fade-in">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=300&fit=crop&auto=format&q=75" alt="Tenis de marca" loading="lazy">
+        </div>
+        <div class="gallery-item fade-in">
+          <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=400&h=300&fit=crop&auto=format&q=75" alt="Ropa en perchero" loading="lazy">
+        </div>
+        <div class="gallery-item large fade-in">
+          <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=800&h=400&fit=crop&auto=format&q=75" alt="Experiencia de compras" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAVE: gallery → pricing -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,0 C300,55 600,5 900,40 C1050,55 1150,15 1200,5 L1200,60 L0,60Z" fill="#FFFFFF"/>
+    </svg>
+  </div>
+
+  <!-- PRICING -->
   <section class="pricing" id="precios">
-    <div class="section-title">
-      <h2>Precio del servicio</h2>
-      <p>Simple, transparente y justo</p>
-      <div class="gold-line"></div>
-    </div>
-    <div class="price-card reveal">
-      <div class="price-amount"><span>+</span>20<span>%</span></div>
-      <div class="price-label">SOBRE EL TOTAL DE TU COMPRA</div>
-      <ul class="price-features">
-        <li>Videollamada en tiempo real desde la tienda</li>
-        <li>Búsqueda personalizada de tu talla y estilo</li>
-        <li>Sin costo si no encuentras lo que buscas</li>
-        <li>Asesoría de moda incluida</li>
-        <li>Fotos y videos de cada prenda</li>
-      </ul>
-      <a href="https://wa.me/16028217262?text=Hola%20Rossy!%20Quiero%20agendar%20una%20cita%20para%20compras%20%F0%9F%9B%8D%EF%B8%8F" class="btn-primary" style="color:#1a3a6e;" onclick="fbq('track', 'Contact');">📅 Agendar mi cita ahora</a>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Precio
+        </span>
+        <h2 class="section-title">Simple y <em>Transparente</em></h2>
+        <p>Sin costos ocultos. Sin sorpresas.</p>
+      </div>
+      <div class="price-card fade-in">
+        <div class="price-amount"><sup>+</sup>20<sup>%</sup></div>
+        <div class="price-label">sobre el total de tu compra</div>
+        <ul class="price-features">
+          <li>
+            <span class="price-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8C070" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Videollamada en tiempo real desde la tienda
+          </li>
+          <li>
+            <span class="price-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8C070" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Búsqueda personalizada de tu talla y estilo
+          </li>
+          <li>
+            <span class="price-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8C070" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Si no encuentro lo que buscas, no te cobro
+          </li>
+          <li>
+            <span class="price-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8C070" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Asesoría de moda incluida
+          </li>
+          <li>
+            <span class="price-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8C070" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Fotos y videos de cada prenda
+          </li>
+        </ul>
+        <a href="#agendar" class="btn btn-gold btn-full">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Agendar mi cita
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- NO SOY REVENDEDORA -->
-  <section style="background:#fff; padding:80px 20px;">
-    <div class="section-title">
-      <h2>¿Qué es exactamente este servicio?</h2>
-      <p>Quiero ser muy clara contigo antes de que agendemos</p>
-      <div class="gold-line"></div>
-    </div>
-    <div style="max-width:700px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+  <!-- WAVE: pricing → comparison -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,30 C200,55 400,5 600,30 C800,55 1000,10 1200,35 L1200,60 L0,60Z" fill="#FAF5EE"/>
+    </svg>
+  </div>
 
-      <div style="background:#fff0f0; border:2px solid #ffcccc; border-radius:16px; padding:28px; reveal-left" class="reveal-left">
-        <div style="font-size:2rem; margin-bottom:12px;">❌</div>
-        <h3 style="color:#c0392b; font-family:'Playfair Display',serif; margin-bottom:10px;">Lo que NO soy</h3>
-        <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; color:#555; font-size:0.9rem; line-height:1.6;">
-          <li>✗ No soy revendedora</li>
-          <li>✗ No compro mercancía al por mayor para revender</li>
-          <li>✗ No tengo inventario ni catálogo fijo</li>
-          <li>✗ No te mando lo que yo quiero</li>
-        </ul>
+  <!-- COMPARISON -->
+  <section class="comparison">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          Transparencia
+        </span>
+        <h2 class="section-title">Para Que Quede <em>Claro</em></h2>
+        <p>Esto es lo que soy y lo que no soy.</p>
       </div>
-
-      <div style="background:#f0fff4; border:2px solid #a8e6c0; border-radius:16px; padding:28px;" class="reveal-right">
-        <div style="font-size:2rem; margin-bottom:12px;">✅</div>
-        <h3 style="color:#1a7a40; font-family:'Playfair Display',serif; margin-bottom:10px;">Lo que SÍ soy</h3>
-        <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; color:#555; font-size:0.9rem; line-height:1.6;">
-          <li>✓ Soy tu compradora personal por cita</li>
-          <li>✓ Tú decides qué comprar en videollamada</li>
-          <li>✓ Te doy tu tiempo y tu espacio</li>
-          <li>✓ Tú eres quien elige cada prenda</li>
-        </ul>
+      <div class="comparison-grid">
+        <div class="comp-card not fade-in-left">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+            Lo que NO soy
+          </h3>
+          <ul class="comp-list">
+            <li><span class="comp-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span> No soy revendedora</li>
+            <li><span class="comp-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span> No compro al por mayor para revender</li>
+            <li><span class="comp-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span> No tengo inventario ni catálogo fijo</li>
+            <li><span class="comp-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span> No te mando lo que yo quiero</li>
+          </ul>
+        </div>
+        <div class="comp-card yes fade-in-right">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A7A40" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Lo que SÍ soy
+          </h3>
+          <ul class="comp-list">
+            <li><span class="comp-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A7A40" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Tu compradora personal por cita</li>
+            <li><span class="comp-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A7A40" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Tú decides qué comprar en videollamada</li>
+            <li><span class="comp-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A7A40" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Te doy tu tiempo y tu espacio</li>
+            <li><span class="comp-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A7A40" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Tú eliges cada prenda</li>
+          </ul>
+        </div>
       </div>
-
-    </div>
-
-    <div style="max-width:700px; margin:30px auto 0; background:linear-gradient(135deg,#eef4ff,#e8f0ff); border:1px solid #c0d4f0; border-radius:16px; padding:28px 32px;" class="reveal">
-      <p style="font-size:1rem; line-height:1.8; color:#2d2d2d; text-align:center;">
-        💡 <strong>Este servicio es ideal si eres revendedora, tienes una boutique o simplemente amas las compras.</strong> Cada cliente recibe su pedido directo en su dirección — tú decides qué compras y a dónde se envía.
-      </p>
+      <div class="comp-callout fade-in">
+        <p><strong>Ideal para revendedoras, boutiques o si simplemente amas las compras.</strong> Cada pedido va directo a tu dirección — tú decides qué compras y a dónde se envía.</p>
+      </div>
     </div>
   </section>
+
+  <!-- WAVE: comparison → brands -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,10 C300,55 600,0 900,40 C1050,55 1150,20 1200,10 L1200,60 L0,60Z" fill="#FFFFFF"/>
+    </svg>
+  </div>
+
+  <!-- BRANDS -->
+  <section class="brands-section" id="marcas" style="background:var(--white);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          Catálogo
+        </span>
+        <h2 class="section-title">Marcas que <em>Encuentro</em></h2>
+        <p>Desde deportivas hasta diseñadores premium.</p>
+      </div>
+      <div class="brands-grid">
+        <span class="brand-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M16 10a4 4 0 01-8 0"/></svg> Michael Kors</span>
+        <span class="brand-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M16 10a4 4 0 01-8 0"/></svg> Coach</span>
+        <span class="brand-tag">Nike</span>
+        <span class="brand-tag">Adidas</span>
+        <span class="brand-tag">Calvin Klein</span>
+        <span class="brand-tag">Tommy Hilfiger</span>
+        <span class="brand-tag">Ralph Lauren</span>
+        <span class="brand-tag">Kate Spade</span>
+        <span class="brand-tag">Guess</span>
+        <span class="brand-tag">Levi's</span>
+        <span class="brand-tag">Skechers</span>
+        <span class="brand-tag">Clinique</span>
+        <span class="brand-tag">KitchenAid</span>
+        <span class="brand-tag">y muchas más...</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAVE: brands → reels -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C300,5 500,55 700,25 C900,0 1100,45 1200,20 L1200,60 L0,60Z" fill="#FAF5EE"/>
+    </svg>
+  </div>
+
+  <!-- REELS -->
+  <section class="reels-section" id="reels" style="background:var(--beige);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Instagram
+        </span>
+        <h2 class="section-title">Mira Cómo <em>Compro</em> para Ti</h2>
+        <p>Sígueme en Instagram para ver las compras en tiempo real.</p>
+      </div>
+      <div class="reels-grid">
+        <div class="reel-item fade-in-left">
+          <iframe src="https://www.instagram.com/p/DZNd6oKqVUl/embed" allowtransparency="true" allowfullscreen="true" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="reel-item fade-in">
+          <iframe src="https://www.instagram.com/p/DZMZPa-qHEh/embed" allowtransparency="true" allowfullscreen="true" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="reel-item fade-in-right">
+          <iframe src="https://www.instagram.com/p/DZMYRWgKqua/embed" allowtransparency="true" allowfullscreen="true" frameborder="0" scrolling="no"></iframe>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:32px;">
+        <a href="https://www.instagram.com/shopwithrossy/" target="_blank" class="btn" style="background:linear-gradient(135deg, #833AB4, #FD1D1D, #F77737); color:#fff; box-shadow: 0 8px 28px rgba(131, 58, 180, 0.3);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Sígueme en Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAVE: reels → faq -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,10 C200,55 400,5 600,35 C800,55 1000,10 1200,40 L1200,60 L0,60Z" fill="#FFFFFF"/>
+    </svg>
+  </div>
 
   <!-- FAQ -->
-  <section style="background:var(--beige); padding:80px 20px;" id="faq">
-    <div class="section-title">
-      <h2>Preguntas frecuentes</h2>
-      <p>Todo lo que necesitas saber antes de agendar</p>
-      <div class="gold-line"></div>
-    </div>
-    <div style="max-width:650px; margin:0 auto; display:flex; flex-direction:column; gap:14px;">
-
-      <div class="faq-item reveal" onclick="toggleFaq(this)">
-        <div class="faq-q">¿Por qué no eres revendedora? <span>+</span></div>
-        <div class="faq-a">Porque yo no compro mercancía para después vendértela. Tú agendas una cita conmigo, vamos juntas a la tienda por videollamada, tú eliges cada pieza y pagas el precio real de la tienda. Yo solo cobro mi comisión del 20% por el servicio.</div>
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          FAQ
+        </span>
+        <h2 class="section-title">Preguntas <em>Frecuentes</em></h2>
+        <p>Todo lo que necesitas saber antes de agendar.</p>
       </div>
-
-
-      <div class="faq-item reveal" onclick="toggleFaq(this)">
-        <div class="faq-q">¿Cómo hago el pago? <span>+</span></div>
-        <div class="faq-a">Primero haces el pago de tu mercancía y mi comisión del 20%, y después yo voy a comprar. Aceptamos Zelle, PayPal o transferencia. Te mando el recibo de todo lo que compré.</div>
+      <div class="faq-list">
+        <div class="faq-item fade-in">
+          <div class="faq-q">¿Por qué no eres revendedora? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+          <div class="faq-a">Porque yo no compro mercancía para después vendértela. Tú agendas una cita conmigo, vamos juntas a la tienda por videollamada, tú eliges cada pieza y pagas el precio real de la tienda. Yo solo cobro mi comisión del 20% por el servicio.</div>
+        </div>
+        <div class="faq-item fade-in">
+          <div class="faq-q">¿Cómo hago el pago? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+          <div class="faq-a">Primero haces el pago de tu mercancía y mi comisión del 20%, y después yo voy a comprar. Aceptamos Zelle, PayPal o transferencia. Te mando el recibo de todo lo que compré.</div>
+        </div>
+        <div class="faq-item fade-in">
+          <div class="faq-q">¿Qué pasa si no encuentras lo que busco? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+          <div class="faq-a">Si no encuentro lo que buscas ese día, no te cobro nada. Podemos reagendar para otro día o buscar en otra tienda. Mi objetivo es que quedes satisfecha.</div>
+        </div>
+        <div class="faq-item fade-in">
+          <div class="faq-q">¿Cuánto tiempo tarda en llegar a México? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+          <div class="faq-a">Depende del servicio de paquetería que elijas, pero generalmente entre 7 y 15 días hábiles una vez que se envía el paquete.</div>
+        </div>
+        <div class="faq-item fade-in">
+          <div class="faq-q">¿Funciona para revendedoras o negocios? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+          <div class="faq-a">Sí, es perfecto. Muchas de mis clientas son dueñas de boutiques o revendedoras. Al comprar varios artículos juntos el envío sale más económico y consiguen mercancía de marca a precios de outlet.</div>
+        </div>
       </div>
-
-      <div class="faq-item reveal" onclick="toggleFaq(this)">
-        <div class="faq-q">¿Qué pasa si no encuentras lo que busco? <span>+</span></div>
-        <div class="faq-a">Si no encuentro lo que buscas ese día, no te cobro nada. Podemos reagendar para otro día o buscar en otra tienda. Mi objetivo es que quedes satisfecha.</div>
-      </div>
-
-      <div class="faq-item reveal" onclick="toggleFaq(this)">
-        <div class="faq-q">¿Cuánto tiempo tarda en llegar a México? <span>+</span></div>
-        <div class="faq-a">Depende del servicio de paquetería que elijas, pero generalmente entre 7 y 15 días hábiles una vez que se envía el paquete.</div>
-      </div>
-
-      <div class="faq-item reveal" onclick="toggleFaq(this)">
-        <div class="faq-q">¿Funciona para revendedoras o negocios? <span>+</span></div>
-        <div class="faq-a">¡Sí, es perfecto! Muchas de mis clientas son dueñas de boutiques o revendedoras. Al comprar varios artículos juntos el envío sale más económico y consiguen mercancía de marca a precios de outlet.</div>
-      </div>
-
     </div>
   </section>
 
-  <style>
-    .faq-item {
-      background: #fff;
-      border: 1px solid var(--beige-dark);
-      border-radius: 12px;
-      overflow: hidden;
-      cursor: pointer;
-      transition: box-shadow 0.2s;
-    }
-    .faq-item:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
-    .faq-q {
-      padding: 18px 22px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      color: var(--blue);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .faq-q span { font-size: 1.3rem; color: var(--gold); transition: transform 0.3s; }
-    .faq-a {
-      max-height: 0;
-      overflow: hidden;
-      padding: 0 22px;
-      font-size: 0.9rem;
-      color: #555;
-      line-height: 1.7;
-      transition: max-height 0.4s ease, padding 0.3s ease;
-    }
-    .faq-item.open .faq-a { max-height: 200px; padding: 0 22px 18px; }
-    .faq-item.open .faq-q span { transform: rotate(45deg); }
-  </style>
+  <!-- WAVE: faq → form -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,30 C200,60 400,0 600,30 C800,60 1000,0 1200,30 L1200,60 L0,60Z" fill="#FAF5EE"/>
+    </svg>
+  </div>
 
-  <!-- CATÁLOGO DE MARCAS -->
-  <section class="brands-section" id="marcas">
-    <div class="section-title">
-      <h2>Marcas que encuentro</h2>
-      <p>Desde marcas deportivas hasta diseñadores premium</p>
-      <div class="gold-line"></div>
-    </div>
-    <div class="brands-grid">
-      <div class="brand-tag">👜 Michael Kors</div>
-      <div class="brand-tag">👜 Coach</div>
-      <div class="brand-tag">👟 Nike</div>
-      <div class="brand-tag">👟 Adidas</div>
-      <div class="brand-tag">👗 Calvin Klein</div>
-      <div class="brand-tag">👗 Tommy Hilfiger</div>
-      <div class="brand-tag">✨ Ralph Lauren</div>
-      <div class="brand-tag">💎 Kate Spade</div>
-      <div class="brand-tag">👗 Guess</div>
-      <div class="brand-tag">🧥 Levi's</div>
-      <div class="brand-tag">👟 Skechers</div>
-      <div class="brand-tag">💄 Clinique</div>
-      <div class="brand-tag">🏠 KitchenAid</div>
-      <div class="brand-tag">✨ y muchas más...</div>
-    </div>
-  </section>
-
-  <!-- REELS DE INSTAGRAM -->
-  <section style="background:#fff; padding:80px 20px;" id="reels">
-    <div class="section-title">
-      <h2>Mira cómo compro para ti</h2>
-      <p>Sígueme en Instagram para ver las compras en tiempo real</p>
-      <div class="gold-line"></div>
-    </div>
-    <div class="reels-grid">
-      <div class="reel-item reveal-left">
-        <iframe src="https://www.instagram.com/p/DZNd6oKqVUl/embed" allowtransparency="true" allowfullscreen="true" frameborder="0" scrolling="no"></iframe>
-      </div>
-      <div class="reel-item reveal">
-        <iframe src="https://www.instagram.com/p/DZMZPa-qHEh/embed" allowtransparency="true" allowfullscreen="true" frameborder="0" scrolling="no"></iframe>
-      </div>
-      <div class="reel-item reveal-right">
-        <iframe src="https://www.instagram.com/p/DZMYRWgKqua/embed" allowtransparency="true" allowfullscreen="true" frameborder="0" scrolling="no"></iframe>
-      </div>
-    </div>
-    <div style="text-align:center; margin-top:30px;">
-      <a href="https://www.instagram.com/shopwithrossy/" target="_blank" class="btn-primary" style="background:linear-gradient(135deg, #833ab4, #fd1d1d, #f77737);">Sígueme en Instagram</a>
-    </div>
-  </section>
-
-  <!-- FORMULARIO -->
+  <!-- FORM -->
   <section class="form-section" id="agendar">
-    <div class="section-title">
-      <h2>Agenda tu cita</h2>
-      <p>Llena el formulario y te contactamos en menos de 24 horas</p>
-      <div class="gold-line"></div>
-    </div>
-    <div class="form-card reveal">
-      <form id="formCita">
-        <div class="form-row">
-          <div class="form-group">
-            <label>Tu nombre</label>
-            <input type="text" placeholder="Ej. María García" id="nombre" required>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Agendar
+        </span>
+        <h2 class="section-title">Agenda Tu <em>Cita</em></h2>
+        <p>Llena el formulario y te contacto en menos de 24 horas.</p>
+      </div>
+      <div class="form-card fade-in">
+        <form id="formCita">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Tu nombre</label>
+              <input type="text" placeholder="Ej. María García" id="nombre" required>
+            </div>
+            <div class="form-group">
+              <label>WhatsApp / Teléfono</label>
+              <input type="tel" placeholder="+52 55 1234 5678" id="telefono" required>
+            </div>
           </div>
           <div class="form-group">
-            <label>WhatsApp / Teléfono</label>
-            <input type="tel" placeholder="+52 55 1234 5678" id="telefono" required>
+            <label>Tu correo electrónico</label>
+            <input type="email" placeholder="Ej. maria@gmail.com" id="email" name="email" required>
           </div>
-        </div>
-        <div class="form-group">
-          <label>Tu correo electrónico</label>
-          <input type="email" placeholder="Ej. maria@gmail.com" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label>¿Qué estás buscando?</label>
-          <select id="categoria" required>
-            <option value="">Selecciona una categoría</option>
-            <option>👗 Ropa de mujer</option>
-            <option>👔 Ropa de hombre</option>
-            <option>👶 Ropa de niños</option>
-            <option>👜 Bolsas y accesorios</option>
-            <option>👟 Zapatos y tenis</option>
-            <option>🏠 Artículos del hogar</option>
-            <option>💄 Cosméticos y perfumes</option>
-            <option>🛍️ Variado / Revendedor</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Presupuesto aproximado (USD)</label>
-          <select id="presupuesto">
-            <option value="">Selecciona tu presupuesto</option>
-            <option>$50 - $100 USD</option>
-            <option>$100 - $300 USD</option>
-            <option>$300 - $500 USD</option>
-            <option>$500 - $1,000 USD</option>
-            <option>Más de $1,000 USD</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Cuéntame más (marcas, tallas, colores)</label>
-          <textarea placeholder="Ej. Busco bolsa Michael Kors color café talla mediana, tenis Nike mujer talla 7..." id="detalle"></textarea>
-        </div>
-        <button type="submit" class="btn-form">📅 Enviar solicitud por WhatsApp</button>
-        <div class="form-success" id="successMsg">✅ ¡Listo! Te redirigimos a WhatsApp para confirmar tu cita.</div>
-      </form>
+          <div class="form-group">
+            <label>¿Qué estás buscando?</label>
+            <select id="categoria" required>
+              <option value="">Selecciona una categoría</option>
+              <option>Ropa de mujer</option>
+              <option>Ropa de hombre</option>
+              <option>Ropa de niños</option>
+              <option>Bolsas y accesorios</option>
+              <option>Zapatos y tenis</option>
+              <option>Artículos del hogar</option>
+              <option>Cosméticos y perfumes</option>
+              <option>Variado / Revendedor</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Presupuesto aproximado (USD)</label>
+            <select id="presupuesto">
+              <option value="">Selecciona tu presupuesto</option>
+              <option>$50 - $100 USD</option>
+              <option>$100 - $300 USD</option>
+              <option>$300 - $500 USD</option>
+              <option>$500 - $1,000 USD</option>
+              <option>Más de $1,000 USD</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Cuéntame más (marcas, tallas, colores)</label>
+            <textarea placeholder="Ej. Busco bolsa Michael Kors color café talla mediana, tenis Nike mujer talla 7..." id="detalle"></textarea>
+          </div>
+          <button type="submit" class="btn-form">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Enviar solicitud por WhatsApp
+          </button>
+          <div class="form-success" id="successMsg">¡Listo! Te redirigimos a WhatsApp para confirmar tu cita.</div>
+        </form>
+      </div>
     </div>
   </section>
 
-  <!-- CONTACTO -->
-  <section class="contact" id="contacto">
-    <div class="section-title">
-      <h2>¡Hablemos!</h2>
-      <p>Escríbeme y agendamos tu videollamada de compras</p>
-      <div class="gold-line"></div>
-    </div>
-    <div class="contact-grid">
-      <a class="contact-btn whatsapp" href="https://wa.me/16028217262?text=Hola%20Rossy!%20Quiero%20agendar%20una%20cita%20para%20compras%20%F0%9F%9B%8D%EF%B8%8F" target="_blank" onclick="fbq('track', 'Contact');">
-        <img src="https://cdn.simpleicons.org/whatsapp/white" alt="WhatsApp">
-        <span>WhatsApp</span>
-      </a>
-      <a class="contact-btn instagram" href="https://www.instagram.com/shopwithrossy/" target="_blank">
-        <img src="https://cdn.simpleicons.org/instagram/white" alt="Instagram">
-        <span>Instagram</span>
-      </a>
-      <a class="contact-btn facebook" href="https://www.facebook.com/profile.php?id=61590637858280" target="_blank">
-        <img src="https://cdn.simpleicons.org/facebook/white" alt="Facebook">
-        <span>Facebook</span>
-      </a>
+  <!-- WAVE: form → contact -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,10 C300,50 600,5 900,35 C1050,50 1150,20 1200,10 L1200,60 L0,60Z" fill="#FFFFFF"/>
+    </svg>
+  </div>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contacto">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Contacto
+        </span>
+        <h2 class="section-title">¡Hablemos!</h2>
+        <p>Escríbeme y agendamos tu videollamada de compras.</p>
+      </div>
+      <div class="contact-grid">
+        <a class="contact-btn whatsapp" href="https://wa.me/16028217262?text=Hola%20Rossy!%20Quiero%20agendar%20una%20cita%20para%20compras%20%F0%9F%9B%8D%EF%B8%8F" target="_blank" onclick="typeof fbq!=='undefined'&&fbq('track','Contact');">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.612.638l4.67-1.386A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.319 0-4.476-.66-6.317-1.797l-.442-.269-3.222.957.88-3.108-.296-.47A9.936 9.936 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          <span>WhatsApp</span>
+        </a>
+        <a class="contact-btn instagram" href="https://www.instagram.com/shopwithrossy/" target="_blank">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          <span>Instagram</span>
+        </a>
+        <a class="contact-btn facebook" href="https://www.facebook.com/profile.php?id=61590637858280" target="_blank">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          <span>Facebook</span>
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- WHATSAPP FLOTANTE -->
-  <a class="wa-float" href="https://wa.me/16028217262?text=Hola%20Rossy!%20Quiero%20agendar%20una%20cita%20%F0%9F%9B%8D%EF%B8%8F" target="_blank" onclick="fbq('track', 'Contact');">
-    <img src="https://cdn.simpleicons.org/whatsapp/white" alt="WhatsApp">
+  <!-- WHATSAPP FLOAT -->
+  <a class="wa-float" href="https://wa.me/16028217262?text=Hola%20Rossy!%20Quiero%20agendar%20una%20cita%20%F0%9F%9B%8D%EF%B8%8F" target="_blank" onclick="typeof fbq!=='undefined'&&fbq('track','Contact');">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.612.638l4.67-1.386A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.319 0-4.476-.66-6.317-1.797l-.442-.269-3.222.957.88-3.108-.296-.47A9.936 9.936 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
   </a>
 
   <!-- FOOTER -->
-  <footer>
-    <p>© 2026 <span>Shop With Rossy</span> — Personal Shopper desde USA 🇺🇸</p>
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <strong>Shop With Rossy</strong>
+        <p>Tu personal shopper desde Phoenix, AZ. Ropa de marca a precios de outlet, directo a México.</p>
+      </div>
+      <div class="footer-links">
+        <strong>Explora</strong>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#tiendas">Tiendas</a>
+        <a href="#precios">Precios</a>
+        <a href="#agendar">Agendar</a>
+      </div>
+      <div class="footer-links">
+        <strong>Conecta</strong>
+        <a href="https://wa.me/16028217262" target="_blank">WhatsApp</a>
+        <a href="https://www.instagram.com/shopwithrossy/" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=61590637858280" target="_blank">Facebook</a>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>&copy; 2026 Shop With Rossy. All rights reserved.</p>
+      <span class="made-with">Sitio creado por Vista Growth Agency</span>
+    </div>
   </footer>
 
   <!-- Pixel Guard — Lead Firewall by Vista Growth Agency -->
   <script src="pixel-guard.js"></script>
-
-  <script>
-    // Animaciones al hacer scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.15 });
-
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
-      observer.observe(el);
-    });
-
-    function toggleFaq(el) {
-      el.classList.toggle('open');
-    }
-
-    document.getElementById('formCita').addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      const nombre = document.getElementById('nombre').value;
-      const telefono = document.getElementById('telefono').value;
-      const email = document.getElementById('email').value;
-      const categoria = document.getElementById('categoria').value;
-      const presupuesto = document.getElementById('presupuesto').value;
-      const detalle = document.getElementById('detalle').value;
-
-      if (!nombre || !telefono || !email || !categoria) {
-        alert('Por favor llena todos los campos obligatorios.');
-        return;
-      }
-
-      const msg = `Hola Rossy! 👋 Quiero agendar una cita.
-
-*Nombre:* ${nombre}
-*Teléfono:* ${telefono}
-*Email:* ${email}
-*Busco:* ${categoria}
-*Presupuesto:* ${presupuesto}
-*Detalles:* ${detalle || 'Sin detalles adicionales'}`;
-
-      fbq('track', 'Lead');
-      document.getElementById('successMsg').style.display = 'block';
-      setTimeout(() => {
-        window.open(`https://wa.me/16028217262?text=${encodeURIComponent(msg)}`, '_blank');
-      }, 800);
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
