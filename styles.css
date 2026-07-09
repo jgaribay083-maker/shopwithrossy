@@ -26,6 +26,10 @@
 
 html { scroll-behavior: smooth; }
 
+section[id] { scroll-margin-top: 72px; }
+
+::selection { background: var(--gold-light); color: var(--dark); }
+
 body {
   font-family: 'Inter', sans-serif;
   background: var(--beige);
@@ -177,7 +181,18 @@ a { text-decoration: none; }
   padding: 100px 24px 60px;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #1A3A6E 0%, #2A5F9E 40%, #3A80C0 100%);
+  background: linear-gradient(160deg, #0F2247 0%, #1A3A6E 45%, #2A5F9E 100%);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 45% at 50% 62%, rgba(200, 151, 58, 0.14) 0%, transparent 70%),
+    radial-gradient(ellipse 120% 60% at 50% 110%, rgba(15, 34, 71, 0.75) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .hero-bg-img {
@@ -185,7 +200,7 @@ a { text-decoration: none; }
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.18;
+  opacity: 0.14;
 }
 
 .hero-content {
@@ -230,6 +245,7 @@ a { text-decoration: none; }
   line-height: 1.15;
   margin-bottom: 10px;
   text-wrap: balance;
+  text-shadow: 0 2px 24px rgba(15, 34, 71, 0.45);
 }
 
 .hero-title .gold { color: var(--gold-light); }
@@ -259,6 +275,18 @@ a { text-decoration: none; }
   gap: 14px;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.hero-avail {
+  margin-top: 22px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.85rem;
+  letter-spacing: 0.3px;
+}
+
+.hero-avail strong {
+  color: var(--gold-light);
+  font-weight: 600;
 }
 
 .hero-stores {
@@ -539,8 +567,17 @@ section { padding: 80px 24px; }
   text-align: center;
   color: var(--white);
   box-shadow: 0 20px 60px rgba(42, 95, 158, 0.3);
+  border: 1px solid rgba(200, 151, 58, 0.35);
   position: relative;
   overflow: hidden;
+}
+
+.price-note {
+  margin-top: 16px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+  position: relative;
 }
 
 .price-card::before {
