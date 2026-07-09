@@ -129,7 +129,7 @@
       if (typeof fbq !== 'undefined') { fbq('track', 'Lead'); }
       document.getElementById('successMsg').style.display = 'block';
       setTimeout(function () {
-        window.open('https://wa.me/16028217262?text=' + encodeURIComponent(msg), '_blank');
+        window.open('https://wa.me/16024703727?text=' + encodeURIComponent(msg), '_blank');
       }, 800);
     });
   }
