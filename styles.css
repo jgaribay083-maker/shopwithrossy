@@ -686,14 +686,6 @@ section { padding: 80px 24px; }
   color: rgba(255, 255, 255, 0.7);
 }
 
-.price-includes {
-  margin-top: 28px;
-  font-size: 0.92rem;
-  line-height: 1.6;
-  text-align: left;
-  color: rgba(255, 255, 255, 0.9);
-}
-
 .price-guarantee {
   font-weight: 700;
   color: var(--gold-light);
@@ -709,7 +701,7 @@ section { padding: 80px 24px; }
 
 .price-features {
   list-style: none;
-  margin: 16px 0 24px;
+  margin: 28px 0 24px;
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -901,7 +893,7 @@ section { padding: 80px 24px; }
 }
 
 .faq-item.open .faq-a {
-  max-height: 360px;
+  max-height: 720px;
   padding: 0 22px 18px;
 }
 
